@@ -19,7 +19,7 @@ class FamillesController < ApplicationController
 private
 
   def params_famille
-    params.require(:famille).permit(:name)
+    params.require(:famille).permit(:name, :photo)
   end
 
 end
