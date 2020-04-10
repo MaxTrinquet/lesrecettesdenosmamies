@@ -1,2 +1,34 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container-home">
+  <div class="logo">
+    <%= image_tag "logo_transparent.png", alt: "alttext" %>
+  </div>
+
+  <div class="description-home">
+    <h1>Bienvenue sur Les recettes de nos mamies ! </h1>
+  </div>
+  <div class="description-text">
+    <p>Nous avons crees ce site pour vous permettre de partager, en famille, vos meilleures recettes.
+    Celles de vos mamies, de votre maman, de vos freres & soeurs...
+    Retrouvez facilement leurs meilleures recettes, et n hesitez pas a les commenter ! </p>
+  </div>
+
+    <div class="btn-container">
+      <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+        <defs>
+          <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+        </defs>
+      </svg>
+      <a class="btn" href= "./familles/new" >Creer une famille
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+      </a>
+    </div>
+
+
+ </div>
+
