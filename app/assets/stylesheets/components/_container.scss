@@ -1,19 +1,39 @@
 
 // Home containter
-.container-home{
+.container-home-red{
   background-color: $bordeaux;
   height: 70%;
 }
 
 .description-home{
-  width:60%;
+  width:70%;
   margin: 0 auto;
   text-align:center;
   margin-top: -50px;
 }
+.description-home span{
+ font-family: $title-logo;
+ font-weight: 100;
+ font-size: 75px;
+}
+.description-famille{
+  width:70%;
+
+}
+.description-famille span{
+  color:$orange;
+  font-family: $title-logo;
+}
 
 .btn-container {
-  margin-top: 60px;
+  margin-top: 40px;
   text-align: center;
+  font-style: $title-logo;
+}
 
+.card-container{
+  width:70%;
+  margin: 0 auto;
+  margin-left:300px;
+  margin-top:20px;
 }
