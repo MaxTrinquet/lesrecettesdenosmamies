@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'familles#index'
+  get 'home', to: 'familles#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :recettes
   resources :familles
+  resources :recettes
+
 end
