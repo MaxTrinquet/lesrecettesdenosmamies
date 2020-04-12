@@ -64,20 +64,21 @@
 
   <!-- Carte container  -->
       <div class="description-famille">
-        <h1> <span> Les familles deja inscrites </span> </h1>
+      Les familles deja inscrites
       </div>
 
 
 
       <div class="card-container">
         <% @familles.each do |famille| %>
-          <div class="card-category">
+          <%= link_to famille_path(famille) do %>
+            <div class="card-category">
               <%= cl_image_tag famille.photo.key, class: "card-category"%>
-          <div class="card-text"><%= famille.name %> </div>
-          </div>
+             <div class="card-text"><%= famille.name %> </div>
+            </div>
+            <% end %>
         <% end %>
       </div>
-
 
 
 

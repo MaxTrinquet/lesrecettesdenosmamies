@@ -1,6 +1,7 @@
 class FamillesController < ApplicationController
 
   def show
+    @famille = Famille.find(params[:id])
   end
 
   def index

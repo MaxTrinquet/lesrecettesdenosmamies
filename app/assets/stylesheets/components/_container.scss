@@ -19,12 +19,15 @@
 .description-famille{
   width:70%;
   margin-left:300px;
-  margin-top:20px;
 
 }
-.description-famille span{
+.description-famille{
   color:$orange;
   font-family: $title-logo;
+  font-size: 40px;
+  margin: 0 auto;
+  width: 30%;
+  text-align:center;
 }
 
 .btn-container {
@@ -35,5 +38,8 @@
 
 .card-container{
   display:flex;
-  margin-left:300px;
+  margin: 0 auto;
+  width:45%;
+  justify-content: space-around;
+
 }
