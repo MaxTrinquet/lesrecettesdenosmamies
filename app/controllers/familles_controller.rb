@@ -15,6 +15,8 @@ class FamillesController < ApplicationController
   def create
     @famille = Famille.new(params_famille)
     @famille.save
+
+    redirect_to famille_path(@famille)
   end
 
 private
