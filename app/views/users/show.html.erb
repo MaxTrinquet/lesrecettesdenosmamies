@@ -1,0 +1,15 @@
+<h1>Hello <%= @user.name %></h1>
+
+  <%= link_to new_user_recette_path(@user, @recette) do %>
+    <div class="btn btn-primary">
+      Ajouter une recette
+    </div>
+  <% end %>
+
+
+  <div class="btn-logout">
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      Se deconnecter
+    <% end %>
+  </div>
+
