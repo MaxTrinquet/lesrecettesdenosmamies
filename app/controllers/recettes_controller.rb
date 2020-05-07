@@ -14,6 +14,7 @@ class RecettesController < ApplicationController
 
    def create
     @recette = Recette.new(params_recette)
+    @recette.user = current_user
     @recette.save
 
     redirect_to user_path(@user)
