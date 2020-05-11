@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_125656) do
+ActiveRecord::Schema.define(version: 2020_05_11_153342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2020_05_07_125656) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "familles_recettes", force: :cascade do |t|
+    t.bigint "famille_id"
+    t.bigint "recette_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["famille_id"], name: "index_familles_recettes_on_famille_id"
+    t.index ["recette_id"], name: "index_familles_recettes_on_recette_id"
+  end
+
   create_table "familles_users", force: :cascade do |t|
     t.bigint "famille_id"
     t.bigint "user_id"
@@ -56,10 +65,10 @@ ActiveRecord::Schema.define(version: 2020_05_07_125656) do
     t.text "description"
     t.string "createur"
     t.text "ingredient"
-    t.bigint "famille_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "famille_id"
     t.index ["famille_id"], name: "index_recettes_on_famille_id"
     t.index ["user_id"], name: "index_recettes_on_user_id"
   end
@@ -80,6 +89,8 @@ ActiveRecord::Schema.define(version: 2020_05_07_125656) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "familles_recettes", "familles"
+  add_foreign_key "familles_recettes", "recettes"
   add_foreign_key "familles_users", "familles"
   add_foreign_key "familles_users", "users"
   add_foreign_key "recettes", "familles"

@@ -5,8 +5,9 @@ class RecettesController < ApplicationController
   def index
     @recettes = Recette.all
   end
+
   def show
-    @recettes = Recette.find(params[:id])
+    @recette = Recette.find(params[:id]
   end
 
   def new
@@ -16,7 +17,10 @@ class RecettesController < ApplicationController
   def create
     @recette = Recette.new(params_recette)
     @recette.user = @user
+    # @recette.famille = @famille
     @recette.save
+
+
     redirect_to user_path(@user)
   end
 
