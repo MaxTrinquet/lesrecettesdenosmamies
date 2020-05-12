@@ -2,20 +2,30 @@
 
   <!-- Recette creer par l'utilisateur -->
   <h3>Mes recettes </h3>
-  <% @recettes.each do |recette|%>
-    <li>
-      <%= recette.name %>
-    </li>
-  <% end %>
+    <div class="card-container">
+      <% @recipes.each do |recipe| %>
+        <%= link_to user_recipe_path(recipe) do %>
+          <div class="card-category">
+            <%= cl_image_tag recipe.photo.key, class: "card-category"%>
+            <div class="card-text"><%= recipe.name %> </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
 
   <!-- Recette d'une meme famille -->
   <h3>Les recettes de ma famille</h3>
-
+    <% @family_recipe.each do |recipe|%>
+      <li>
+       <%= recipe.name %>
+      </li>
+    <% end %>
 
 
 
   <!-- Ajouter une recette -->
-  <%= link_to new_user_recette_path(@user, @recette) do %>
+  <%= link_to new_user_recipe_path(@user, @recipe) do %>
     <div class="btn btn-primary">
       Ajouter une recette
     </div>

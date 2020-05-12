@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'familles#index'
-  get 'home', to: 'familles#index'
+  root to: 'families#index'
+  get 'home', to: 'families#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :familles
+  resources :families
   resources :users do
-    resources :recettes
+    resources :recipes
   end
 end

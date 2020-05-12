@@ -29,7 +29,7 @@
           <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
         </defs>
       </svg>
-      <a class="btn " href= "./familles/new" >Creer une famille
+      <a class="btn " href= "./families/new" >Creer une famille
         <svg class="button-stroke" viewBox="0 0 154 13">
           <use href="#line"></use>
         </svg>
@@ -75,11 +75,11 @@
       </div>
 
       <div class="card-container">
-        <% @familles.each do |famille| %>
-          <%= link_to famille_path(famille) do %>
+        <% @families.each do |family| %>
+          <%= link_to family_path(family) do %>
             <div class="card-category">
-              <%= cl_image_tag famille.photo.key, class: "card-category"%>
-             <div class="card-text"><%= famille.name %> </div>
+              <%= cl_image_tag family.photo.key, class: "card-category"%>
+             <div class="card-text"><%= family.name %> </div>
             </div>
             <% end %>
         <% end %>
