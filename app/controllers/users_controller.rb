@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
-    @recettes = current_user.recettes
-    @famille_recette = current_user.famille.recettes
+    @recipes = current_user.recipes
+    @family_recipe = current_user.family.recipes
   end
-
 end
