@@ -1,14 +1,14 @@
 <!-- Red container  -->
 <div class="container-home-red">
   <!-- Se deconnecter bouton  -->
-    <div class="logo">
-      <%= image_tag "logo_transparent.png", alt: "alttext" %>
-        <div class="btn-logout">
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            Se deconnecter
-          <% end %>
-        </div>
+  <div class="logo">
+    <%= image_tag "logo_transparent.png", alt: "alttext" %>
+      <div class="btn-logout">
+        <%= link_to new_user_registration_path do %>
+        S'inscrire
+      <% end %>
     </div>
+  </div>
 
 
   <div class="description-home">
@@ -21,22 +21,24 @@
   </div>
 
     <!-- Create a famille, se conncter and creer a profil bouton  -->
-    <div class="btn-container">
-      <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-        <defs>
-          <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-        </defs>
-      </svg>
-      <a class="btn " href= "./families/new" >Creer une famille
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-      </a>
 
+          <!--   <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+              <defs>
+                <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+              </defs>
+            </svg>
+            <a class="btn " href= "./families/new" >Creer une famille
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+              <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line"></use>
+              </svg>
+            </a>
+        -->
       <!-- Bouton se connecter  -->
+
+    <div class="btn-container">
       <% if current_user == nil %>
         <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
           <defs>
@@ -51,9 +53,7 @@
             <use href="#line"></use>
           </svg>
         </a>
-
       <% else %>
-
         <!-- Mes recettes -->
         <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
           <defs>
@@ -69,27 +69,13 @@
           </svg>
         </a>
       <% end %>
-
-
-         <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-        <defs>
-          <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-        </defs>
-      </svg>
-      <a class="btn" href= "./users/sign_up" > S'inscrire
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-        <svg class="button-stroke" viewBox="0 0 154 13">
-          <use href="#line"></use>
-        </svg>
-      </a>
     </div>
- </div>
+</div>
 
 
-  <!-- Carte container  -->
+        <!-- Carte container  -->
       <div class="description-famille">
-        Les familles deja inscrites
+        Comment ca marche ?
       </div>
+
 

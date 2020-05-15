@@ -1,10 +1,4 @@
-<div class="btn-logout">
-  <%= link_to home_path do %>
-    Home
-  <% end %>
-</div>
-
-
+<div class ="container" data-no-turbolink>
 <h1>Hello <%= @user.name %></h1>
 
   <!-- Recette creer par l'utilisateur -->
@@ -24,11 +18,9 @@
   <!-- Recette d'une meme famille -->
   <h3>Les recettes de ma famille</h3>
     <% @family_recipe.each do |recipe|%>
-      <li>
-       <%= recipe.name %>
+      <li> <%= recipe.name %> par <i>  <%= recipe.user.name %> </i>
       </li>
     <% end %>
-
 
 
   <!-- Ajouter une recette -->
@@ -44,4 +36,5 @@
       Se deconnecter
     <% end %>
   </div>
+</div>
 

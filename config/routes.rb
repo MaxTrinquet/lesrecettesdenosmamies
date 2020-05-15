@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'families#index'
-  get 'home', to: 'families#index'
+  devise_scope :user do
+    authenticated :user do
+      root 'families#index', as: :authenticated_root
+    end
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :families
   resources :users do
     resources :recipes
   end
 end
+
+
+
