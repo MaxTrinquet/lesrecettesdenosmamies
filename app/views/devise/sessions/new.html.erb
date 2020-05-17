@@ -1,3 +1,4 @@
+<!-- Rendering Home Layout -->
 <%= render 'layouts/home'%>
 
   <div id="modal-test" class="modal">
@@ -6,9 +7,11 @@
         <div class="form-inputs">
           <%= f.input :email,
                       required: false,
+                      placeholder: 'votre@email.com',
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
           <%= f.input :password,
+                      placeholder: 'Votre mot de passe',
                       required: false,
                       input_html: { autocomplete: "current-password" } %>
         </div>
@@ -17,7 +20,6 @@
           <%= f.button :submit, "Log in" %>
         </div>
       <% end %>
-      <div id="login-or">OR</div>
       <%= render "devise/shared/links" %>
     </div>
   </div>
