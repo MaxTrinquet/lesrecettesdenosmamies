@@ -16,22 +16,36 @@
   background-color: #fefefe;
   margin: 5px auto; /* 15% from the top and centered */
   border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Could be more or less, depending on screen size */
   height: 50%;
   padding: 16px;
+  font-family: $second-font;
+  font-weight: bold;
+  color: $bordeaux;
 }
-
 .modal-content a{
   width: 80%;
-  color: $gray;
+  color: $gris-fonce;
   padding-left: 15px;
   margin-bottom: 0px;
   margin: 0 auto;
-  border-bottom: 1px solid $bordeaux;
+  border-bottom: 1px solid $orange;
   font-size: 10px;
   text-align: center;
 }
 
+// Inside the pop-over
+.form-group{
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.form-inputs{
+  margin-bottom:30px;
+}
+.form-control::placeholder{
+font-style: italic;
+}
 .form-actions{
   margin:0 auto;
   width:50%;
@@ -41,6 +55,11 @@
   border-radius:15px;
   margin-bottom:10px;
 }
+.form-actions .btn{
+  color:white;
+}
+
+// Pop over card
 
 .card-body{
   padding:0.75rem;
@@ -50,9 +69,6 @@
   color: $bordeaux;
 }
 
-.form-actions .btn{
-  color:white;
-}
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
