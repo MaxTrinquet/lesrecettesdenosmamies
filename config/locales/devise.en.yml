@@ -3,12 +3,12 @@
 en:
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      confirmed: "Votre adresse e-mail est confirmée"
+      send_instructions: "Vous allez recevoir un email avec les instructions."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
+      already_authenticated: "Vous êtes déjà connecté."
+      inactive: "Votre compte n'est pas activé"
       invalid: "Invalid %{authentication_keys} or password."
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
@@ -24,9 +24,9 @@ en:
       unlock_instructions:
         subject: "Unlock instructions"
       email_changed:
-        subject: "Email Changed"
+        subject: "Email mis à jour."
       password_change:
-        subject: "Password Changed"
+        subject: "Mot de passe mis à jour."
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -46,7 +46,7 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
     sessions:
-      signed_in: "Signed in successfully."
+      signed_in: "Sing in"
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
     unlocks:
