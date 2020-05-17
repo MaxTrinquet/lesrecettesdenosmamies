@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :family
   has_many :recipes
+
+  # ajoute des validations
 end
