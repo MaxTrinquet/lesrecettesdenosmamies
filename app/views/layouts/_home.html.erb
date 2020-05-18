@@ -8,6 +8,10 @@
     <%= image_tag "logo_transparent.png", alt: "alttext" %>
       <div class="btn-logout">
         <%= link_to new_user_registration_path do %>
+        <!--
+          tant que tu n'as pas bcp de text, met I18n, ca sert a internationaliser les sites pour les mettre en plusieurs langues
+          ok c'est peut etre pas le cas pour les grands meres lol, mais c'est tjrs un bon exercice!
+         -->
         S'inscrire
       <% end %>
     </div>
@@ -15,6 +19,7 @@
 
 
   <div class="description-home">
+    <!-- le span est utile ? -->
     <h1> Bienvenue sur <span> Les recettes de nos mamies ! </span> </h1>
   </div>
   <div class="description-text">
@@ -42,6 +47,7 @@
       <!-- Bouton se connecter  -->
 
     <div class="btn-container">
+      <!-- tu as des methodes user.is_sing_in? ou qqchose comme ca -->
       <% if current_user == nil %>
         <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
           <defs>
@@ -77,6 +83,7 @@
 
 
         <!-- Carte container  -->
+        <!-- Indentation -->
       <div class="description-famille">
         Comment ca marche ?
       </div>

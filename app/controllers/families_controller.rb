@@ -1,5 +1,5 @@
 class FamiliesController < ApplicationController
-
+  # il faut que tu ensures que la personne soit connectee avant d'arriver a ce controller
   def show
     @family = Family.find(params[:id])
   end
@@ -13,6 +13,7 @@ class FamiliesController < ApplicationController
   end
 
   def create
+    # utilise.create
     @family = Family.new(params_family)
     @family.save
 
