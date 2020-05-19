@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   # Ajouter une "fonction pour etre sur que l user est connecte pr acceder a cette page
+  before_action :authenticate_user!
   before_action :set_user, expect: [:index]
 
   def index
