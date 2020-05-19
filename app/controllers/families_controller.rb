@@ -1,5 +1,7 @@
 class FamiliesController < ApplicationController
   # Ajouter une "fonction pour etre sur que l user est connecte pr acceder a cette page
+  before_action :authenticate_user!
+
   def show
     @family = Family.find(params[:id])
   end
@@ -23,7 +25,12 @@ class FamiliesController < ApplicationController
 private
 
   def params_family
-    params.require(:family).permit(:name, :photo)
+    params.require(:family).permit(
+      :name,
+      :photo
+      )
   end
 
 end
+
+
