@@ -1,4 +1,6 @@
 module DeviseHelper
+  #Message pour pop-up
+
   def devise_error_messages!
     return '' if resource.errors.empty?
 

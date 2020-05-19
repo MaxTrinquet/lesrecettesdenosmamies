@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  # il faut que le user soit authentifier pour acceder a ces pages
+  # Ajouter une "fonction pour etre sur que l user est connecte pr acceder a cette page
   before_action :set_user, expect: [:index]
 
   def index
@@ -16,7 +16,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    # tu peux utiliser .create ici aussi, avec une subtilite. indice: .merge
     @recipe = Recipe.new(params_recipe)
     @recipe.user = @user
     @recipe.save
@@ -34,11 +33,8 @@ class RecipesController < ApplicationController
       :name,
       :photo
     )
-    # en colonne ca permet de mieux se retrouver, encore plus si on met par ordre alphabetique
   end
 
-  # la methode n'est pas forcement utile. Utilise current_user des que tu as besoin du user
-  # si tu as besoin de @user dans le front, utilise aussi directement current_user, il me semble que la methode y ait aussi dispo
   def set_user
     @user = current_user
   end
