@@ -1,5 +1,5 @@
 class FamiliesController < ApplicationController
-  # il faut que tu ensures que la personne soit connectee avant d'arriver a ce controller
+  # Ajouter une "fonction pour etre sur que l user est connecte pr acceder a cette page
   def show
     @family = Family.find(params[:id])
   end
