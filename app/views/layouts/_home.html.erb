@@ -1,5 +1,4 @@
 
-<!-- Home layout here -->
 
 <!-- Red container  -->
 <div class="container-home-red">
@@ -8,10 +7,6 @@
     <%= image_tag "logo_transparent.png", alt: "alttext" %>
       <div class="btn-logout">
         <%= link_to new_user_registration_path do %>
-        <!--
-          tant que tu n'as pas bcp de text, met I18n, ca sert a internationaliser les sites pour les mettre en plusieurs langues
-          ok c'est peut etre pas le cas pour les grands meres lol, mais c'est tjrs un bon exercice!
-         -->
         S'inscrire
       <% end %>
     </div>
@@ -19,7 +14,6 @@
 
 
   <div class="description-home">
-    <!-- le span est utile ? -->
     <h1> Bienvenue sur <span> Les recettes de nos mamies ! </span> </h1>
   </div>
   <div class="description-text">
@@ -28,23 +22,6 @@
     Retrouvez facilement leurs meilleures recettes, et n hesitez pas a les commenter ! </p>
   </div>
 
-    <!-- Create a famille, se conncter and creer a profil bouton  -->
-
-          <!--   <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-              <defs>
-                <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-              </defs>
-            </svg>
-            <a class="btn " href= "./families/new" >Creer une famille
-              <svg class="button-stroke" viewBox="0 0 154 13">
-                <use href="#line"></use>
-              </svg>
-              <svg class="button-stroke" viewBox="0 0 154 13">
-                <use href="#line"></use>
-              </svg>
-            </a>
-        -->
-      <!-- Bouton se connecter  -->
 
     <div class="btn-container">
       <!-- tu as des methodes user.is_sing_in? ou qqchose comme ca -->
