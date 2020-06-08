@@ -17,17 +17,19 @@
  font-size: 75px;
 }
 .description-famille{
-  width:70%;
-  margin-left:300px;
 
 }
 .description-famille{
   color:$orange;
   font-family: $title-logo;
-  font-size: 40px;
+  font-size: 65px;
   margin: 0 auto;
   width: 30%;
   text-align:center;
+  width:70%;
+  margin-left:300px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .btn-container {
@@ -41,5 +43,11 @@
   margin: 0 auto;
   width:45%;
   justify-content: space-around;
+}
 
+.tuto{
+  display:flex;
+  margin: 0 auto;
+  width:60%;
+  justify-content: space-around;
 }

@@ -9,12 +9,33 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
-    object-fit:cover
-
+  object-fit:cover
 }
 .card-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.tuto .card-category{
+  position: relative;
+  color: $orange;
+  background-color: $bordeaux;
+  width:180px;
+  height:180px;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+  font-family: $title-logo;
+  text-align:center;
+}
+
+.tuto .card-category::first-letter{
+  font-size:40px;
+  margin: 5px;
+  font-family: $title-logo;
+  text-align:left;
 }
