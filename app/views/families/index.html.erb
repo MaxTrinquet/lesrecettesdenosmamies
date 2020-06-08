@@ -7,8 +7,8 @@
     <span style="width:150px"></span>
     <%= image_tag "logo_transparent.png", alt: "alttext" %>
     <div class="btn-logout">
-      <%= link_to new_user_registration_path do %>
-        S'inscrire
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        Se deconnecter
       <% end %>
     </div>
   </div>
