@@ -1,22 +1,19 @@
 // Specific CSS for your home-page
 // Image logo
 .logo img{
-  width: 300px;
-  height: 300px;
-  flex: 0 1 auto;
-  position: absolute;             /* new */
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top:-10px;
-
+  display:block;
+  width: 446px;
+  height: 224px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top:20px;
 }
 .logo {
-  display: flex;
-  justify-content: flex-start;   /* adjustment */
-  position: relative;
-  height:100px;
-  margin-top:-50px;
-}
+  display:flex;
+  height:250px;
+  padding:10px;
+  justify-content: center;
+  }
 
 
 // Text description after logo
