@@ -20,11 +20,15 @@
 .description-home h1{
   color: $jaune;
   font-size: 50px;
-  margin-top:150px;
+  margin-top:100px;
 }
+
 .description-text p{
   color: $gris;
   margin: 0 auto;
   text-align: center;
   width: 50%;
+}
+.arrow img{
+  width:120px;
 }
