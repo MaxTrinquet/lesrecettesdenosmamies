@@ -1,4 +1,17 @@
 <h1> <%= @recipe.name %> </h1>
 <h2> <%= @recipe.description %> </h2>
-<h2> <%= @recipe.ingredient %></h2>
 <h3> <%= @recipe.category %> </h3>
+
+
+    <% @ingredients.each do |ingredient| %>
+        <li> <%= ingredient.quantity %> <%= ingredient.measure %> <%= ingredient.name %>   </li>
+    <% end %>
+
+
+
+  <div class="btn-logout">
+    <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
+      Ajouter un Ingredient
+    <% end %>
+  </div>
+

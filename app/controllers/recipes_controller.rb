@@ -8,8 +8,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # cette ligne est fausse
-    @recipe = Recipe.find(params[:user_id])
+    @recipe = Recipe.find(params[:id])
+    @ingredients = Ingredient.where(:recipe_id == @recipe.id)
   end
 
   def new
@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
     @recipe.user = @user
     @recipe.save
 
-    redirect_to user_path(@user)
+    redirect_to new_user_recipe_ingredient_path(@user,@recipe)
   end
 
   private
@@ -30,7 +30,6 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(
       :category,
       :description,
-      :ingredient,
       :name,
       :photo
     )
