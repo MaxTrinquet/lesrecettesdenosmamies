@@ -15,7 +15,6 @@ class FamiliesController < ApplicationController
   end
 
   def create
-    # utilise.create
     @family = Family.new(params_family)
     @family.save
 
