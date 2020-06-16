@@ -1,3 +1,13 @@
+ <h1> <%= @recipe.name %> </h1>
+
+   <h3>Liste des ingredients</h3>
+
+    <% @recipe.ingredients.each do |ingredient| %>
+      </li> <%= ingredient.quantity %> <%= ingredient.measure %> <%= ingredient.name %> </li>
+    <% end %>
+
+
+
  <div class="container">
     <%= simple_form_for [@user, @recipe, @ingredient]  do |f| %>
       <%= f.error_notification %>
@@ -7,3 +17,5 @@
       <%= f.button :submit %>
     <% end %>
 </div>
+
+

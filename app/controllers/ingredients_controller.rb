@@ -8,6 +8,7 @@ class IngredientsController < ApplicationController
 
   def new
     @ingredient = Ingredient.new
+    @ingredients = Ingredient.where(recipe_id: @recipe_id)
   end
 
   def create
