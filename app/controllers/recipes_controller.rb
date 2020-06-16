@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @ingredients = Ingredient.where(:recipe_id == @recipe.id)
+     @ingredients = Ingredient.where(recipe_id: :id)
   end
 
   def new
@@ -31,7 +31,8 @@ class RecipesController < ApplicationController
       :category,
       :description,
       :name,
-      :photo
+      :photo,
+      :user
     )
   end
 
