@@ -1,14 +1,18 @@
-  <h1><strong>Votre Recette </strong></h1></div>
+<div class= "container">
+
+  <h1><strong>Votre Recette </strong></h1>
 
   <div class="container">
     <%= simple_form_for [@user, @recipe] do |f| %>
       <%= f.error_notification %>
       <%= f.input :name %>
       <%= f.input :description %>
-      <%= f.input :category %>
+      <%= f.input :category,
+                  as: :radio_buttons,
+                  collection: [ "Entrée", "Plat", "Dessert" ] %>
       <%= f.input :photo, as: :file %>
       <%= f.button :submit %>
-
     <% end %>
   </div>
+</div>
 

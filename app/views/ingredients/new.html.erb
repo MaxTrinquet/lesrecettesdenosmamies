@@ -1,3 +1,5 @@
+<div class="container">
+
  <h1> <%= @recipe.name %> </h1>
 
    <h3>Liste des ingredients</h3>
@@ -8,14 +10,16 @@
 
 
 
- <div class="container">
-    <%= simple_form_for [@user, @recipe, @ingredient]  do |f| %>
+  <div class="container-form">
+    <%= simple_form_for [@user, @recipe, @ingredient] do |f| %>
       <%= f.error_notification %>
-      <%= f.input :name %>
-      <%= f.input :measure %>
-      <%= f.input :quantity %>
+      <%= f.input :name , label: "Ingredient"%>
+      <%= f.input :measure,
+                  label: "Unité",
+                  collection: ["g","l","-","cl","kg","cuillere à café", "cuillere à soupe", "pincée", "sachet"],
+                  hint: 'Pour les oeufs ou les produits entiers, utilisez le "-" ' %>
+      <%= f.input :quantity, label: "Quantité"%>
       <%= f.button :submit %>
     <% end %>
+  </div>
 </div>
-
-
