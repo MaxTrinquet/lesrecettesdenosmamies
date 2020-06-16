@@ -9,7 +9,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-     @ingredients = Ingredient.where(recipe_id: :id)
+    @ingredients = Ingredient.where(recipe_id: :id)
+    @recipe_review_url = "https://lesrecettesdenosmamies.herokuapp.com/#{@user}/#{@recipe.id}"
   end
 
   def new

@@ -1,18 +1,42 @@
-<h1> <%= @recipe.name %> </h1>
-<h3> <%= @recipe.description %> </h3>
-<h6> <%= @recipe.category %> </h6>
 
-==================================
+<div class="container">
+  <h1> <%= @recipe.name %> </h1>
+  <h6> <%= @recipe.category %> </h6>
 
-  <h3>Liste des ingredients</h3>
+  <%= cl_image_tag @recipe.photo.key, class: "card-category" "recipe"%>
+
+   <h3>Liste des ingredients</h3>
   <% @recipe.ingredients.each do |ingredient| %>
    <li> <%= ingredient.quantity %> <%= ingredient.measure %> <%= ingredient.name %> </li>
   <% end %>
+  ==================================
+
+  <h3>Préparation</h3>
+  <h6> <%= @recipe.description %> </h6>
 
 
-  <div class="btn-logout">
-    <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
-      Ajouter un Ingredient
-    <% end %>
-  </div>
 
+
+
+
+
+    <div class="bottom-btn">
+      <div class="btn-logout">
+        <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
+          Ajouter un Ingredient
+        <% end %>
+      </div>
+
+
+      <div class="btn-logout">
+        <%= link_to user_path do %>
+          Retour
+        <% end %>
+      </div>
+      <div class="btn-review">
+        <a href="https://wa.me/?text=<%= @trip_review_url %>"> <i class="fab fa-whatsapp"></i> Share via Whatsapp</a>
+      </div>
+
+    </div>
+
+</div>
