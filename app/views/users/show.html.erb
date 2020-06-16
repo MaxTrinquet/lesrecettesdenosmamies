@@ -2,26 +2,32 @@
 <h1>Hello <%= @user.name %></h1>
 
   <!-- Recette creer par l'utilisateur -->
-  <h3>Mes recettes </h3>
-    <div class="card-container">
-      <% @recipes.each do |recipe| %>
-        <%= link_to user_recipe_path(@user,recipe) do %>
-          <div class="card-category">
-            <%= cl_image_tag recipe.photo.key, class: "card-category"%>
-            <div class="card-text"><%= recipe.name %> </div>
-          </div>
+  <div class="card-recipe">
+    <h3>Mes recettes </h3>
+      <div class="card-container">
+        <% @recipes.each do |recipe| %>
+          <%= link_to user_recipe_path(@user,recipe) do %>
+            <div class="card-category">
+              <%= cl_image_tag recipe.photo.key, class: "card-category"%>
+              <div class="card-text"><%= recipe.name %> </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-
+      </div>
+  </div>
 
   <!-- Recette d'une meme famille -->
-  <h3>Les recettes de ma famille</h3>
-    <% @family_recipe.each do |recipe|%>
-      <li> <%= recipe.name %> par <i>  <%= recipe.user.name %> </i>
-      </li>
-    <% end %>
 
+  <div class="card-recipe">
+    <h3>Les recettes de ma famille</h3>
+      <% @family_recipe.each do |recipe|%>
+        <li>
+          <%= link_to user_recipe_path(@user,recipe) do %>  <%= recipe.name %> <% end %>
+          par
+          <i> <%= recipe.user.name %> </i>
+        </li>
+      <% end %>
+  </div>
 
   <!-- Ajouter une recette -->
   <%= link_to new_user_recipe_path(@user, @recipe) do %>
@@ -36,5 +42,6 @@
       Se deconnecter
     <% end %>
   </div>
+
 </div>
 
