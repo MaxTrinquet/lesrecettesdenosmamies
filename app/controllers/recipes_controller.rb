@@ -1,16 +1,15 @@
 class RecipesController < ApplicationController
-  # Ajouter une "fonction pour etre sur que l user est connecte pr acceder a cette page
-  before_action :authenticate_user!
-  before_action :set_user, expect: [:index]
+  before_action :set_user, expect: [:index,:show]
 
   def index
     @recipes = Recipe.all
   end
 
   def show
+    @user = User.find(params[:user_id])
     @recipe = Recipe.find(params[:id])
     @ingredients = Ingredient.where(recipe_id: :id)
-    # @recipe_review_url = "https://lesrecettesdenosmamies.herokuapp.com/#{@user}/#{@recipe.id}"
+    @recipe_review_url = "https://lesrecettesdenosmamies.herokuapp.com/#{@user}/#{@recipe.id}"
   end
 
   def new
