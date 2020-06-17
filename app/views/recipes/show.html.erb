@@ -3,18 +3,23 @@
   <h1> <%= @recipe.name %> </h1>
   <h6> <%= @recipe.category %> </h6>
 
-  <%= cl_image_tag @recipe.photo.key, class: "card-category" "recipe"%>
+    <%= cl_image_tag @recipe.photo.key, class: "card-category" "recipe"%>
 
-   <h3>Liste des ingredients</h3>
-  <% @recipe.ingredients.each do |ingredient| %>
-   <li> <%= ingredient.quantity %> <%= ingredient.measure %> <%= ingredient.name %> </li>
-  <% end %>
-  ==================================
+  <div class="container-ingredient">
+     <h3>Liste des ingredients</h3>
+    <% @recipe.ingredients.each do |ingredient| %>
+     <li> <%= ingredient.quantity %> <%= ingredient.measure %> <%= ingredient.name %> </li>
+    <% end %>
+  </div>
 
-  <h3>Préparation</h3>
-  <h6> <%= @recipe.description %> </h6>
+  ================================== <br>
 
 
+  <h3>Préparation </h3>
+  <i> <%= @recipe.person %> personnes - <%= @recipe.minute %> min </i>
+
+  <br>
+  <p> <%= @recipe.description %> </p>
 
 
 

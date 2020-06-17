@@ -31,6 +31,8 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(
       :category,
       :description,
+      :minute,
+      :person,
       :name,
       :photo,
       :user
