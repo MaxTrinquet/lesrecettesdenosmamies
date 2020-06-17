@@ -16,22 +16,17 @@
 
 
   <h3>Préparation </h3>
-  <i> <%= @recipe.person %> personnes - <%= @recipe.minute %> min </i>
+  <i> <%= @recipe.person %> personne(s) - <%= @recipe.minute %> min </i>
 
   <br>
   <p> <%= @recipe.description %> </p>
 
-
-
-
-
     <div class="bottom-btn">
       <div class="btn-logout">
         <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
-          Ajouter un Ingredient
+          + Ingredient
         <% end %>
       </div>
-
 
       <div class="btn-logout">
         <%= link_to user_path do %>
@@ -41,7 +36,5 @@
       <div class="btn-review">
         <a href="https://wa.me/?text=<%= @trip_review_url %>"> <i class="fab fa-whatsapp"></i> Share via Whatsapp</a>
       </div>
-
     </div>
-
 </div>

@@ -6,12 +6,13 @@
     <%= simple_form_for [@user, @recipe] do |f| %>
       <%= f.error_notification %>
       <%= f.input :name %>
-      <%= f.input :description %>
+      <%= f.input :description,
+                  label: "Préparation" %>
       <%= f.input :category,
                   as: :radio_buttons,
                   collection: [ "Entrée", "Plat", "Dessert" ] %>
       <%= f.input :minute, label: "Temps de préparation en min" %>
-      <%= f.input :person, label: "Pour combien de personne ?" %>
+      <%= f.input :person, label: "Pour combien de personne(s) ?" %>
       <%= f.input :photo, as: :file %>
       <%= f.button :submit %>
     <% end %>
