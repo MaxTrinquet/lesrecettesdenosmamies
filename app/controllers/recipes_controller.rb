@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
 
     @recipe_review_url = "https://lesrecettesdenosmamies.herokuapp.com/#{@user}/#{@recipe.id}"
 
-    @comment = Comment.new
+    @comments_counter = @recipe.comments.count
   end
 
   def new

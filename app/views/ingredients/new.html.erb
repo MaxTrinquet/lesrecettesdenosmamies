@@ -2,7 +2,7 @@
 
   <h1> <%= @recipe.name %> </h1>
 
-  <h3>Liste des ingredients</h3>
+  <h3>Liste des ingrédients</h3>
 
   <% @recipe.ingredients.each do |ingredient| %>
     </li> <%= ingredient.quantity %> <%= ingredient.measure %> <%= ingredient.name %> </li>
@@ -13,10 +13,10 @@
   <div class="container-form">
     <%= simple_form_for [@user, @recipe, @ingredient] do |f| %>
       <%= f.error_notification %>
-      <%= f.input :name , label: "Ingredient"%>
+      <%= f.input :name , label: "Ingrédient"%>
       <%= f.input :measure,
                   label: "Unité",
-                  collection: ["g","l","-","cl","kg","cuillere à café", "cuillere à soupe", "pincée", "sachet"],
+                  collection: ["g","l","-","cl","kg","cuillère(s) à café", "cuillère(s) à soupe", "pincée(s)", "sachet(s)"],
                   hint: 'Pour les oeufs ou les produits entiers, utilisez le "-" ' %>
       <%= f.input :quantity, label: "Quantité"%>
       <%= f.button :submit %>
