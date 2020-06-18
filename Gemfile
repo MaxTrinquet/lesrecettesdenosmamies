@@ -19,8 +19,10 @@ gem 'devise'
 gem 'cloudinary', '~> 1.12.0'
 gem 'devise-i18n'
 
+
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'rails-erd'
 end
 
 group :development, :test do
