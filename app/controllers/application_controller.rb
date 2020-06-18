@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-   def after_sign_in_path_for(resource_or_scope)
-      if resource_or_scope.is_a?(User)
-        user_path(resource_or_scope)
-      elsif resource_or_scope.is_a?(AdminUser)
-        admin_dashboard_path(resource_or_scope)
-      end
+  def after_sign_in_path_for(resource_or_scope)
+    if resource_or_scope.is_a?(User)
+      user_path(resource_or_scope)
+    elsif resource_or_scope.is_a?(AdminUser)
+      admin_dashboard_path(resource_or_scope)
     end
+  end
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb

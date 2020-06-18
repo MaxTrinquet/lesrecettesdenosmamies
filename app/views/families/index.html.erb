@@ -1,5 +1,3 @@
-
-
 <!-- Red container  -->
 <div class="container-home-red">
   <!-- Se deconnecter bouton  -->
@@ -22,41 +20,41 @@
     celles de vos mamies, de votre maman, de vos frères & soeurs...
     Retrouvez-les facilement et n'hésitez pas à les partager et à les commenter ! </p>
   </div>
+</div>
 
-    <!-- Create a famille, se conncter and creer a profil bouton  -->
-    <div class="btn-container">
-
-      <!-- Bouton se connecter  -->
-      <% if current_user == nil %>
-        <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-          <defs>
-            <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-          </defs>
+  <div class="btn-container">
+    <!-- Bouton se connecter  -->
+    <% if current_user == nil %>
+      <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+        <defs>
+          <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+        </defs>
+      </svg>
+      <a class="btn btn-login" href= "./users/sign_in" > Se connecter
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
         </svg>
-        <a class="btn btn-login" href= "./users/sign_in" > Se connecter
-          <svg class="button-stroke" viewBox="0 0 154 13">
-            <use href="#line"></use>
-          </svg>
-          <svg class="button-stroke" viewBox="0 0 154 13">
-            <use href="#line"></use>
-          </svg>
-        </a>
-
-      <% else %>
-
-        <!-- Mes recettes -->
-        <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-          <defs>
-            <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-          </defs>
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
         </svg>
-        <a class="btn btn-login" href= "./users/:id" > Mes recettes
-          <svg class="button-stroke" viewBox="0 0 154 13">
-            <use href="#line"></use>
-          </svg>
-          <svg class="button-stroke" viewBox="0 0 154 13">
-            <use href="#line"></use>
-          </svg>
-        </a>
-      <% end %>
+      </a>
+
+    <% else %>
+
+      <!-- Mes recettes -->
+      <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+        <defs>
+          <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+        </defs>
+      </svg>
+      <a class="btn btn-login" href= "./users/:id" > Mes recettes
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+        <svg class="button-stroke" viewBox="0 0 154 13">
+          <use href="#line"></use>
+        </svg>
+      </a>
+    <% end %>
+  </div>
 

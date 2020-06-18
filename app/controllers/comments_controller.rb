@@ -20,6 +20,11 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:name, :comment_description, :recipe_id)
+    params.require(:comment).permit(
+      :name,
+      :comment_description,
+      :recipe_id
+      )
   end
+
 end

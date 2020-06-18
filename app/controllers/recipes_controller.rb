@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
     @ingredients = Ingredient.where(recipe_id: :id)
 
 
-    @recipe_review_url = "https://lesrecettesdenosmamies.herokuapp.com/#{@user}/#{@recipe.id}"
+    @recipe_review_url = "https://lesrecettesdenosmamies.herokuapp.com/users/#{@user.id}/recipes/#{@recipe.id}"
 
     @comments_counter = @recipe.comments.count
   end

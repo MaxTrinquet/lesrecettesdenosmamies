@@ -4,7 +4,6 @@
   <i> <%= @recipe.person %> personne(s) - <%= @recipe.minute %> min </i>
   <h6> <b> <%= @recipe.category %> </b></h6>
 
-
     <%= cl_image_tag @recipe.photo.key, class: "card-category" "recipe"%>
 
   <div class="container-ingredient">
@@ -16,29 +15,28 @@
 
   ================================== <br>
 
-
   <h3>Préparation </h3>
 
   <br>
   <p> <%= @recipe.description %> </p>
 
-      <div class="bottom-btn">
-        <div class="btn-logout">
-          <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
-            + Ingredient
-          <% end %>
-        </div>
+  <div class="bottom-btn">
+    <div class="btn-logout">
+      <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
+        + Ingredient
+      <% end %>
+    </div>
 
-        <div class="btn-logout">
-          <%= link_to user_path do %>
-            Retour
-          <% end %>
-        </div>
-        <div class="btn-review">
-          <a href="https://wa.me/?text=<%= @trip_review_url %>"> <i class="fab fa-whatsapp"></i> Share via Whatsapp</a>
-        </div>
-      </div>
+    <div class="btn-logout">
+      <%= link_to user_path do %>
+        Retour
+      <% end %>
+    </div>
+    <div class="btn-logout">
+      <a href="https://wa.me/?text=<%= @recipe_review_url %>"> <i class="fab fa-whatsapp"></i> Partager</a>
+    </div>
   </div>
+</div>
 
 
     <div class="container">
