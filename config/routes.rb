@@ -18,9 +18,8 @@ end
   resources :users do
     resources :recipes do
       resources :ingredients
+      resources :comments , only: [:new, :create]
     end
   end
 end
-
-
 
