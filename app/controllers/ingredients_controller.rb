@@ -12,7 +12,6 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.last
     @ingredient = Ingredient.new(params_ingredient)
     @ingredient.recipe = @recipe
     @ingredient.save

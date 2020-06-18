@@ -21,20 +21,46 @@
   <br>
   <p> <%= @recipe.description %> </p>
 
-    <div class="bottom-btn">
-      <div class="btn-logout">
-        <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
-          + Ingredient
-        <% end %>
+      <div class="bottom-btn">
+        <div class="btn-logout">
+          <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
+            + Ingredient
+          <% end %>
+        </div>
+
+        <div class="btn-logout">
+          <%= link_to user_path do %>
+            Retour
+          <% end %>
+        </div>
+        <div class="btn-review">
+          <a href="https://wa.me/?text=<%= @trip_review_url %>"> <i class="fab fa-whatsapp"></i> Share via Whatsapp</a>
+        </div>
+      </div>
+  </div>
+
+
+    <div class="container">
+      <div class="comment-logic">
+          <div class="title-review comment-title"
+          >Comments
+          </div>
       </div>
 
-      <div class="btn-logout">
-        <%= link_to user_path do %>
-          Retour
-        <% end %>
-      </div>
-      <div class="btn-review">
-        <a href="https://wa.me/?text=<%= @trip_review_url %>"> <i class="fab fa-whatsapp"></i> Share via Whatsapp</a>
-      </div>
+
+      <% @recipe.comments.each do |comment| %>
+        <div class="d-flex flex-column flex-end">
+          <div class="d-flex justify-content-between info-comment">
+            <p class="mb-0 comment-name"><%= comment.name %></p>
+            <p class="mb-0 comment-date"><%= comment.created_at.strftime('%d %b %Y') %></p>
+          </div>
+          <p class="comment-description">" <%= comment.comment_description%>"</p>
+        </div>
+      <% end %>
+
+      <% if current_user.nil? %>
+        <%= link_to "Laisser un commentaire", new_user_recipe_comment_path(@user,@recipe), class: "btn-review-comment"%>
+      <% elsif current_user != @recipe.user %>
+        <%= link_to "Laisser un commentaire", new_user_recipe_comment_path(@user,@recipe), class: "btn-review-comment"%>
+      <% end %>
     </div>
-</div>
