@@ -1,14 +1,14 @@
 
 <div class="container">
   <h1> <%= @recipe.name %> </h1>
-  <i> <%= @recipe.person %> personne(s) - <%= @recipe.minute %> min </i>
+  <i>  <%= @recipe.person %> personne(s) - <%= @recipe.minute %> min </i>
   <h6> <b> <%= @recipe.category %> </b></h6>
 
     <%= cl_image_tag @recipe.photo.key, class: "card-category" "recipe"%>
 
   <div class="container-ingredient">
      <h3>Liste des ingredients</h3>
-    <% @recipe.ingredients.each do |ingredient| %>
+    <% @ingredients.each do |ingredient| %>
      <li> <%= ingredient.quantity %> <%= ingredient.measure %> <%= ingredient.name %> </li>
     <% end %>
   </div>
