@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'cloudinary', '~> 1.12.0'
 gem 'devise-i18n'
+gem 'friendly_id', '~> 5.2.4'
 
 
 group :development do

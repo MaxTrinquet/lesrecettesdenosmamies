@@ -4,6 +4,8 @@ class Recipe < ApplicationRecord
   has_one_attached :photo
   has_many :comments, dependent: :destroy
 
-  # Need valition here
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end
 

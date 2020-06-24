@@ -6,8 +6,9 @@ class RecipesController < ApplicationController
   end
 
   def show
+
     @user = User.find(params[:user_id])
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.friendly.find(params[:id])
     @ingredients = Ingredient.where(recipe_id: params[:id])
 
 
