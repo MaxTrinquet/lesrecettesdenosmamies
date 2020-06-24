@@ -8,7 +8,11 @@
         <% @recipes.each do |recipe| %>
           <%= link_to user_recipe_path(@user,recipe) do %>
             <div class="card-category">
-              <%= cl_image_tag recipe.photo.key, class: "card-category"%>
+              <% if recipe.photo.attached? %>
+                <%= cl_image_tag recipe.photo.key, class: "card-category"%>
+              <% else %>
+                <img class="card-category" src="https://semantic-ui.com/images/wireframe/image.png" >
+              <% end %>
               <div class="card-text"><%= recipe.name %> </div>
             </div>
           <% end %>

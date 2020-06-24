@@ -4,7 +4,11 @@
   <i>  <%= @recipe.person %> personne(s) - <%= @recipe.minute %> min </i>
   <h6> <b> <%= @recipe.category %> </b></h6>
 
-    <%= cl_image_tag @recipe.photo.key, class: "card-category" "recipe"%>
+    <% if @recipe.photo.attached? %>
+      <%= cl_image_tag @recipe.photo.key, class: "card-category"%>
+    <% else %>
+      <img class="card-category" src="https://semantic-ui.com/images/wireframe/image.png" >
+    <% end %>
 
   <div class="container-ingredient">
      <h3>Liste des ingredients</h3>
