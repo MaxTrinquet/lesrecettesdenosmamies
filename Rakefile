@@ -3,4 +3,10 @@
 
 require_relative 'config/application'
 
+
 Rails.application.load_tasks
+
+desc "Afficher Hello World"
+task :say_hello do
+  puts "Hello World!!!"
+end
