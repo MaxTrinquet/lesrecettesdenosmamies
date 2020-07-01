@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :family
   has_many :recipes
-  # Need valition here
+
+  validates :name, presence: true
 end
