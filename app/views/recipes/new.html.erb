@@ -1,3 +1,5 @@
+
+
 <div class= "container">
 
   <h1><strong> Votre Recette </strong></h1>
@@ -7,7 +9,7 @@
       <%= f.error_notification %>
       <%= f.input :name %>
       <%= f.input :description,
-                  label: "Préparation" %>
+                  label: "Préparation", as: :trix_editor %>
       <%= f.input :category,
                   as: :radio_buttons,
                   collection: [ "Entrée", "Plat", "Dessert" ] %>
@@ -18,4 +20,5 @@
     <% end %>
   </div>
 </div>
+
 

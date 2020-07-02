@@ -22,8 +22,7 @@
   <h3>Préparation </h3>
 
   <br>
-  <p> <%= @recipe.description %> </p>
-
+  <%= sanitize @recipe.description %>
   <div class="bottom-btn">
     <div class="btn-logout">
       <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
@@ -43,6 +42,7 @@
 </div>
 
 
+    <!-- Block to add comments -->
     <div class="container">
       <div class="comment-logic">
         <% if @comments_counter > 0 %>
