@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+
   end
 
   def show
@@ -10,7 +11,6 @@ class RecipesController < ApplicationController
     @user = User.find(params[:user_id])
     @recipe = Recipe.friendly.find(params[:id])
     @ingredients = Ingredient.where(recipe_id: params[:id])
-
 
     @recipe_review_url = "https://lesrecettesdenosmamies.herokuapp.com/users/#{@user.id}/recipes/#{@recipe.id}"
 

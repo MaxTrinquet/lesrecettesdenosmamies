@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :family
-  has_many :recipes
+  has_many :recipes, dependent: :destroy
 
   validates :name, presence: true
 end

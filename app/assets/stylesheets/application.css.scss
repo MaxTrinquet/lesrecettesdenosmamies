@@ -13,3 +13,16 @@
 @import "components/index";
 @import "pages/index";
 
+/* SCSS file */
+
+trix-toolbar .button_groups {
+  button.code {
+    display: none;
+  }
+  button.increase {
+    display: none;
+  }
+  button.decrease {
+    display: none;
+  }
+}
