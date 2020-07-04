@@ -5,7 +5,7 @@
   <div class="card-recipe">
     <h3>Mes recettes </h3>
       <div class="card-container">
-        <% @recipes.each do |recipe| %>
+        <% @first_five_current_user_recipes.each do |recipe| %>
           <%= link_to user_recipe_path(@user,recipe) do %>
             <div class="card-category">
               <% if recipe.photo.attached? %>

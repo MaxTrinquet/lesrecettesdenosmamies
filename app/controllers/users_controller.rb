@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @recipes = current_user.recipes
+    @first_five_current_user_recipes = current_user.recipes.first(5)
     @family_recipe = current_user.family.recipes
   end
 end
