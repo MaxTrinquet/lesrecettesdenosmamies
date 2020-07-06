@@ -9,13 +9,12 @@
     <% else %>
       <img class="card-category" src="https://semantic-ui.com/images/wireframe/image.png" >
     <% end %>
-
-  <div class="container-ingredient">
-     <h3>Liste des ingredients</h3>
-    <% @ingredients.each do |ingredient| %>
-     <li> <%= ingredient.quantity %> <%= ingredient.measure %> <%= ingredient.name %> </li>
-    <% end %>
-  </div>
+    <div class="container-ingredient">
+      <h3>Liste des ingredients</h3>
+      <%  @ingredients.each do |ingredient|%>
+       <li> <%= ingredient.quantity %> - <%= ingredient.measure %> - <%= ingredient.name  %> </li>
+      <% end %>
+    </div>
 
   ================================== <br>
 
