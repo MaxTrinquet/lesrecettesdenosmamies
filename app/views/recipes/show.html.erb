@@ -24,12 +24,6 @@
   <%= sanitize @recipe.description %>
   <div class="bottom-btn">
     <div class="btn-logout">
-      <%= link_to new_user_recipe_ingredient_path(@user,@recipe) do %>
-        + Ingredient
-      <% end %>
-    </div>
-
-    <div class="btn-logout">
       <%= link_to user_path do %>
         Retour
       <% end %>
