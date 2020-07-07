@@ -24,7 +24,7 @@
 
   <div class="card-recipe">
     <h3>Les recettes de ma famille</h3>
-      <% @family_recipe.each do |recipe|%>
+      <% @result_arr.each do |recipe|%>
         <li>
           <%= link_to user_recipe_path(@user,recipe) do %>  <%= recipe.name %> <% end %>
           par
@@ -47,5 +47,16 @@
     <% end %>
   </div>
 
-</div>
+  <div class="container-form">
+  <%= form_tag user_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query], as: :radio_buttons, collection: [ "Entrée", "Plat", "Dessert" ]
 
+    %>
+    </div>
+    <div>
+      <%= submit_tag "Search", class: "btn" %>
+      <% end %>
+    </div>
+
+</div>
