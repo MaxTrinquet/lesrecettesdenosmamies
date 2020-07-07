@@ -26,13 +26,15 @@
 
   <div class="card-recipe">
     <h3>Les recettes de ma famille</h3>
-      <%= form_tag user_path, method: :get do %>
-        <%= text_field_tag :query,
-                            params[:query],
-                            class: "form-control"%>
-       <div>
+     <div>
+        <%= form_tag user_path, method: :get do %>
+        <%= radio_button_tag :query, "Dessert",params[:query]%> Dessert
+        <%= radio_button_tag :query, "Plat" %> Plat
+        <%= radio_button_tag :query,"Entre" %> Entre
+        <div>
         <%= submit_tag "Search", class: "btn" %>
-      <% end %>
+        <% end %>
+        </div>
       </div>
 
 
