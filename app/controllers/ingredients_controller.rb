@@ -16,7 +16,7 @@ class IngredientsController < ApplicationController
     @ingredient.recipe = @recipe
     @ingredient.save
 
-    redirect_to user_recipe_path(@user,@recipe)
+    redirect_to new_user_recipe_ingredient_path(@user,@recipe)
   end
 
 
