@@ -7,7 +7,8 @@
       <div class="card-container">
         <% @first_five_current_user_recipes.each do |recipe| %>
           <%= link_to user_recipe_path(@user,recipe) do %>
-            <div class="card-category">
+
+            <div class="card-category ml-2">
               <% if recipe.photo.attached? %>
                 <%= cl_image_tag recipe.photo.key, class: "card-category"%>
               <% else %>
@@ -15,6 +16,7 @@
               <% end %>
               <div class="card-text"><%= recipe.name %> </div>
             </div>
+
           <% end %>
         <% end %>
       </div>
@@ -32,7 +34,7 @@
         <%= radio_button_tag :query, "Plat" %> Plat
         <%= radio_button_tag :query,"Entre" %> Entre
         <div>
-        <%= submit_tag "Search", class: "btn" %>
+        <%= submit_tag "Search", class: "btn-logout" %>
         <% end %>
         </div>
       </div>
