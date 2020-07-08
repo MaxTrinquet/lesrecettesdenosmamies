@@ -7,7 +7,7 @@
       <div class="card-container">
         <% @first_five_current_user_recipes.each do |recipe| %>
           <%= link_to user_recipe_path(@user,recipe) do %>
-
+  <!-- Picture  -->
             <div class="card-category ml-2">
               <% if recipe.photo.attached? %>
                 <%= cl_image_tag recipe.photo.key, class: "card-category"%>
@@ -28,6 +28,7 @@
 
   <div class="card-recipe">
     <h3>Les recettes de ma famille</h3>
+    <!-- Methode recherche (no CSS yet, via radio button) -->
      <div>
         <%= form_tag user_path, method: :get do %>
         <%= radio_button_tag :query, "Dessert",params[:query]%> Dessert
@@ -39,7 +40,7 @@
         </div>
       </div>
 
-
+      <!-- Lien vers la recette -->
       <% @result_arr.each do |recipe|%>
         <li>
           <%= link_to user_recipe_path(@user,recipe) do %>  <%= recipe.name %> <% end %>
