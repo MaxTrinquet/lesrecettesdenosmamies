@@ -1,7 +1,7 @@
 <%= simple_form_for ([@user, @recipe, @comment]) do |f| %>
-  <%= f.input :name, input_html: { placeholder: "Votre nom ici " } %>
+  <%= f.input :name, input_html: { placeholder: "Votre nom " } %>
   <%= f.input :comment_description,
               as: :text,
-              input_html: { placeholder: "Votre avis ici? " } %>
-  <%= f.button :submit, 'Je commente'%>
+              input_html: { placeholder: "Votre avis ici " } %>
+  <%= f.button :submit, 'Je commente ! '%>
 <% end %>
