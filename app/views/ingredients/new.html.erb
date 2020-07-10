@@ -17,14 +17,14 @@
       <%= f.input :measure,
                   label: "Unité",
                   collection: ["g","l","-","cl","kg","cuillère(s) à café", "cuillère(s) à soupe", "pincée(s)", "sachet(s)"],
-                  hint: 'Pour les oeufs ou les produits entiers, utilisez le "-" ' %>
+                  hint: 'Pour les oeufs ou les produits entiers, utilisez le "-"' %>
       <%= f.input :quantity, label: "Quantité"%>
       <%= f.button :submit %>
     <% end %>
   </div>
    <div class="btn-logout">
     <%= link_to user_recipe_path(@user,@recipe) do %>
-      Valider la recette !
+      Valider la recette
     <% end %>
   </div>
 </div>
