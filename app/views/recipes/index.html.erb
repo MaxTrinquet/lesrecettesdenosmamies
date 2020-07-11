@@ -1,5 +1,6 @@
 <div class ="container" data-no-turbolink>
-<h1>Hello <%= @user.name %></h1>
+<!-- Link for user page -->
+ <h1> Hello <%= link_to @user.name , user_path(@user) %> </h1>
 
   <!-- Recette creer par l'utilisateur -->
   <div class="card-recipe">
@@ -7,7 +8,7 @@
       <div class="card-container">
         <% @first_five_current_user_recipes.each do |recipe| %>
           <%= link_to user_recipe_path(@user,recipe) do %>
-  <!-- Picture  -->
+            <!-- Picture  -->
             <div class="card-category ml-2">
               <% if recipe.photo.attached? %>
                 <%= cl_image_tag recipe.photo.key, class: "card-category"%>
@@ -16,14 +17,12 @@
               <% end %>
               <div class="card-text"><%= recipe.name %> </div>
             </div>
-
           <% end %>
         <% end %>
       </div>
   </div>
 
   <!-- Recette d'une meme famille -->
-
   <div class="card-recipe">
     <h3>Les recettes de ma famille</h3>
     <!-- Methode recherche (no CSS yet, via radio button) -->
