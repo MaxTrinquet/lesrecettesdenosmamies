@@ -1,8 +1,68 @@
-<h1>Hello</h1>
-La liste de vos recettes :
+<div class ="container" data-no-turbolink>
+<h1>Hello <%= @user.name %></h1>
 
-<% @recipes.each do |recipe|%>
-  <ul>
-  <li><%= recipe.name %></li>
-  </ul>
-<% end %>
+  <!-- Recette creer par l'utilisateur -->
+  <div class="card-recipe">
+    <h3>Mes recettes </h3>
+      <div class="card-container">
+        <% @first_five_current_user_recipes.each do |recipe| %>
+          <%= link_to user_recipe_path(@user,recipe) do %>
+  <!-- Picture  -->
+            <div class="card-category ml-2">
+              <% if recipe.photo.attached? %>
+                <%= cl_image_tag recipe.photo.key, class: "card-category"%>
+              <% else %>
+                <img class="card-category" src="https://semantic-ui.com/images/wireframe/image.png" >
+              <% end %>
+              <div class="card-text"><%= recipe.name %> </div>
+            </div>
+
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+
+  <!-- Recette d'une meme famille -->
+
+  <div class="card-recipe">
+    <h3>Les recettes de ma famille</h3>
+    <!-- Methode recherche (no CSS yet, via radio button) -->
+     <div>
+        <%= form_tag user_recipes_path, method: :get do %>
+        <%= radio_button_tag :query, "Dessert",params[:query]%> Dessert
+        <%= radio_button_tag :query, "Plat" %> Plat
+        <%= radio_button_tag :query,"Entre" %> Entre
+        <div>
+        <%= submit_tag "Search", class: "btn-logout" %>
+        <% end %>
+        </div>
+      </div>
+
+      <!-- Lien vers la recette -->
+      <% @result_arr.each do |recipe|%>
+        <li>
+          <%= link_to user_recipe_path(@user,recipe) do %>  <%= recipe.name %> <% end %>
+          par
+          <i> <%= recipe.user.name %> </i>
+        </li>
+      <% end %>
+  </div>
+
+
+  <!-- Ajouter une recette -->
+  <%= link_to new_user_recipe_path(@user, @recipe) do %>
+    <div class="btn btn-primary">
+      Ajouter une recette
+    </div>
+  <% end %>
+
+  <!-- Se deconnecter  -->
+  <div class="btn-logout">
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      Se deconnecter
+    <% end %>
+  </div>
+
+
+
+</div>

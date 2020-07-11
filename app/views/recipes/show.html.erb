@@ -21,10 +21,13 @@
   <h3>Préparation </h3>
 
   <br>
+
   <%= sanitize @recipe.description %>
+
   <div class="bottom-btn">
+    <!-- Block to share whatapps link -->
     <div class="btn-logout">
-      <%= link_to user_path do %>
+      <%= link_to user_recipes_path do %>
         Retour
       <% end %>
     </div>
