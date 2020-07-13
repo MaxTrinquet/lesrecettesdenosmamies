@@ -1,7 +1,22 @@
 
 <div class="container">
- <br> Bonjour, <%= @user.name %>
- <br> email : <%= @user.email %>
-
+  <br> Bonjour, <%= @user.name %>
+  <br> email : <%= @user.email %>
+  <br>
 <!-- Mettre les differents option une edit -->
+  <%= link_to edit_user_path(@user) do %>
+    <div class="btn btn-primary">
+      Changer mes infos
+    </div>
+  <% end %>
+
+
+
+  <br>
+  <%= link_to user_recipes_path(@user) do %>
+    <div class="btn btn-logout">
+      Retour
+    </div>
+  <% end %>
+
  </div>
