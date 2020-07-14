@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+
+  # Redirection after sign_in (User versus Admin)
   def after_sign_in_path_for(resource_or_scope)
     if resource_or_scope.is_a?(User)
       user_recipes_path(resource_or_scope)
@@ -9,8 +11,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # For additional fields in app/views/devise/registrations/new.html.erb
   def configure_permitted_parameters
-    # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name , :password, :family_id])
   end
 
