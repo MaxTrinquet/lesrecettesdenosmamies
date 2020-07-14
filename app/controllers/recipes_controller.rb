@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_user, expect: [:show]
 
+
   def index
     @first_five_current_user_recipes = current_user.recipes.first(5)
     @family_recipe = current_user.family.recipes
